@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="nava-logo-gold1.png">
+  <link rel="apple-touch-icon" href="nava-logo-gold1.png">
+
+  <!-- Primary SEO -->
+  <title>Thank You | NAVA Digital</title>
+  <meta name="robots" content="noindex, follow">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="weave-bg text-slate-900 dark:text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 min-h-screen flex flex-col justify-between transition-colors duration-300">
+
+  <!-- HEADER -->
+  <header class="top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-slate-200/80 dark:border-slate-800/80 py-4 px-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="header-brand-group flex items-center gap-1 group" aria-label="NAVA Home">
+        <img src="nava-logo-gold1.png" alt="NAVA emblem" class="header-logo-img h-10 w-auto">
+        <img src="nava-name-gold.png" alt="NAVA" class="header-name-img h-8 w-auto">
+      </a>
+      <a href="index.html" class="text-xs font-mono text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
+        ← Back to Homepage
+      </a>
+    </div>
+  </header>
+
+  <!-- THANK YOU CONTENT -->
+  <main class="flex-grow flex items-center justify-center py-16 px-6">
+    <div class="max-w-lg w-full text-center space-y-8 bg-white/60 dark:bg-slate-900/60 p-8 sm:p-12 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md shadow-2xl">
+      
+      <!-- Success Icon Badge -->
+      <div class="w-20 h-20 mx-auto rounded-full bg-emerald-500/10 border-2 border-emerald-500/30 flex items-center justify-center text-emerald-500 shadow-lg shadow-emerald-500/10 animate-bounce">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <div class="space-y-3">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-mono font-semibold uppercase tracking-wider">
+          Message Received
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Thank You for Reaching Out!
+        </h1>
+        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+          Your project brief has been received by our engineering team. We will review your details and respond to your email within <span class="font-semibold text-amber-600 dark:text-amber-400">24 hours</span>.
+        </p>
+      </div>
+
+      <!-- Quick Info Box -->
+      <div class="bg-slate-100/80 dark:bg-slate-950/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-800/80 text-left text-xs font-mono space-y-2 text-slate-600 dark:text-slate-400">
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+          <span>Response Time:</span>
+          <span class="text-slate-900 dark:text-slate-200 font-bold">&lt; 24 Hours</span>
+        </div>
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+          <span>Direct Contact:</span>
+          <span class="text-amber-600 dark:text-amber-400">teamnavadigital@gmail.com</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span>WhatsApp Quick Support:</span>
+          <span class="text-emerald-600 dark:text-emerald-400 font-bold">+91 99890 61802</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="index.html" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-xs font-mono uppercase tracking-wider transition-all shadow-lg shadow-amber-500/20 text-center">
+          Return to Homepage
+        </a>
+        <a href="https://wa.me/919989061802?text=Hi%20NAVA%2C%20I%20just%20submitted%20a%20contact%20form." target="_blank" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 font-semibold text-xs font-mono uppercase tracking-wider transition-all text-center">
+          Chat on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200/80 dark:border-slate-800/80 py-8 px-6 bg-slate-100/90 dark:bg-slate-950 text-center text-xs font-mono text-slate-500 dark:text-slate-400 space-y-1">
+    <div>© 2026 NAVA Digital. All rights reserved. Founded by <span class="font-bold text-slate-900 dark:text-white">ABHIRAM ALLADA</span>.</div>
+    <div class="text-[0.7rem] text-slate-400 dark:text-slate-500">Engineered for high performance &amp; human conversion.</div>
+  </footer>
+
+</body>
+</html>

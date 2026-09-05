@@ -1,0 +1,12 @@
+{
+  "name": "nava-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "deploy": "node build.js && firebase deploy"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.0.0"
+  }
+}

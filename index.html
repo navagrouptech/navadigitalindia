@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>NAVA Digital | Custom Websites, E-Commerce & Mobile Apps</title>
+  <meta name="description"
+    content="NAVA Digital is a founder-led agency building high-converting websites, fast e-commerce stores, and native mobile apps. 100% custom code, direct founder collaboration, 7–14 day delivery.">
+  <meta name="keywords"
+    content="NAVA Digital, custom web design, e-commerce development, mobile app development, web applications, digital agency India, fast website builder, founder-led agency, WhatsApp checkout, SEO-optimised websites">
+  <meta name="author" content="NAVA Digital">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://navadigitalindia.web.app/">
+  <link rel="icon" type="image/png" href="nava-logo-gold1.png">
+  <link rel="apple-touch-icon" href="nava-logo-gold1.png">
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navadigitalindia.web.app/">
+  <meta property="og:title" content="NAVA Digital | Custom Websites, E-Commerce & Mobile Apps">
+  <meta property="og:description"
+    content="Founder-led digital agency building high-converting websites, e-commerce stores & mobile apps. 100% custom, clean code, direct handoff. Let's build together.">
+  <meta property="og:image" content="https://navadigitalindia.web.app/nava-logo-gold1.png">
+  <meta property="og:site_name" content="NAVA Digital">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://navadigitalindia.web.app/">
+  <meta name="twitter:title" content="NAVA Digital | Custom Websites, E-Commerce & Mobile Apps">
+  <meta name="twitter:description"
+    content="Founder-led digital agency building high-converting websites, e-commerce stores & mobile apps. 7-14 day delivery. Direct founder collaboration.">
+  <meta name="twitter:image" content="https://navadigitalindia.web.app/nava-logo-gold1.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://navadigitalindia.web.app/#business",
+        "name": "NAVA Digital",
+        "description": "Founder-led digital agency engineering high-converting websites, e-commerce storefronts, and mobile apps.",
+        "url": "https://navadigitalindia.web.app/",
+        "logo": "nava-logo-gold1.png",
+        "email": "teamnavadigital@gmail.com",
+        "telephone": "+919989061802",
+        "priceRange": "$$",
+        "areaServed": "Worldwide",
+        "serviceType": ["Web Design", "E-Commerce Development", "Mobile App Development", "Digital Marketing"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://navadigitalindia.web.app/#website",
+        "url": "https://navadigitalindia.web.app/",
+        "name": "NAVA Digital",
+        "publisher": { "@id": "https://navadigitalindia.web.app/#business" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script>
+      (function () {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+  </script>
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({ publicKey: 'onvovVwx2bhkeSuys' });
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+  class="weave-bg text-slate-900 dark:text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950 transition-colors duration-300">
+
+  <!-- NAV HEADER -->
+  <header
+    class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#top" class="header-brand-group flex items-center gap-1 group" aria-label="NAVA Home">
+        <img src="nava-logo-gold1.png" alt="NAVA emblem" class="header-logo-img">
+        <img src="nava-name-gold.png" alt="NAVA" class="header-name-img">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav id="primary-nav" class="hidden md:flex items-center gap-9 text-sm font-medium">
+        <a href="#services"
+          class="nav-link text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white"
+          data-section="services">Services</a>
+        <a href="#work" class="nav-link text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white"
+          data-section="work">Work</a>
+        <a href="#stack" class="nav-link text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white"
+          data-section="stack">Tech Stack</a>
+        <a href="#process"
+          class="nav-link text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white"
+          data-section="process">Process</a>
+        <a href="#faq" class="nav-link text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white"
+          data-section="faq">FAQ</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-4">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" type="button"
+          class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900/90 border border-slate-300 dark:border-slate-800 text-xs text-slate-800 dark:text-slate-300 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all duration-300 cursor-pointer shadow-sm"
+          aria-label="Toggle Light or Dark Mode">
+          <svg id="theme-icon-sun" class="w-4 h-4 text-amber-500 hidden" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg id="theme-icon-moon" class="w-4 h-4 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <span id="theme-toggle-text" class="font-mono text-xs font-semibold">Light Mode</span>
+        </button>
+
+        <button id="menu-toggle"
+          class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:border-amber-400/50 transition-colors"
+          aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg id="icon-open" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <nav id="mobile-nav"
+      class="md:hidden hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-2xl px-6 py-6 flex flex-col gap-4 text-base">
+      <a href="#services" class="py-2 text-slate-800 dark:text-slate-300 hover:text-amber-500 font-medium">Services</a>
+      <a href="#work" class="py-2 text-slate-800 dark:text-slate-300 hover:text-amber-500 font-medium">Work</a>
+      <a href="#stack" class="py-2 text-slate-800 dark:text-slate-300 hover:text-amber-500 font-medium">Tech Stack</a>
+      <a href="#process" class="py-2 text-slate-800 dark:text-slate-300 hover:text-amber-500 font-medium">Process</a>
+      <a href="#faq" class="py-2 text-slate-800 dark:text-slate-300 hover:text-amber-500 font-medium">FAQ</a>
+
+      <!-- Mobile Theme Toggle -->
+      <button id="mobile-theme-toggle" type="button"
+        class="w-full flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-800 dark:text-slate-200 font-mono text-sm font-semibold">
+        <svg id="mobile-theme-icon-sun" class="w-4 h-4 text-amber-500 hidden" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+        <svg id="mobile-theme-icon-moon" class="w-4 h-4 text-amber-500" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <span id="mobile-theme-toggle-text">Light Mode</span>
+      </button>
+
+      <a href="#contact" class="btn-primary text-center rounded-full py-3 mt-2 text-sm">Start a Project</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO SECTION -->
+  <section id="top" class="relative pt-36 pb-20 md:pt-44 md:pb-28 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+
+      <!-- Hero Text Column -->
+      <div class="lg:col-span-7 reveal">
+        <div
+          class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-600 dark:text-amber-300 text-xs font-mono mb-6">
+          <span class="pulse-dot"></span>
+          <span>Founder-Led Digital Studio</span>
+        </div>
+
+        <h1
+          class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-slate-900 dark:text-white">
+          Websites & apps<br>
+          <span class="gold-gradient-text">built fast, designed with soul.</span>
+        </h1>
+
+        <p class="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+          We turn rough ideas into crisp digital products that load under 100ms, look incredible on every device, and
+          earn trust instantly. Talk directly with the engineer building your product - no bloat, no corporate fluff.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#contact-form" class="btn-primary px-7 py-3.5 rounded-full text-sm">
+            <span>Let's Build Your Idea</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+
+          <a href="#work" class="btn-ghost px-6 py-3.5 rounded-full text-sm">See Work</a>
+        </div>
+
+        <!-- Hero Trust Proof Strip -->
+        <div class="mt-12 pt-8 border-t border-slate-200/80 dark:border-slate-800/80 grid grid-cols-3 gap-6">
+          <div>
+            <div class="font-display font-bold text-2xl lg:text-3xl text-amber-600 dark:text-amber-300">100%</div>
+            <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">Direct Founder Handoff</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl lg:text-3xl text-amber-600 dark:text-amber-300">&lt; 100ms</div>
+            <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">Blazing Fast Response</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-2xl lg:text-3xl text-amber-600 dark:text-amber-300">7-14 Days</div>
+            <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">Average Turnaround</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Right Panel: NAVA Exclusive Emblem Showcase -->
+      <div class="lg:col-span-5 reveal">
+        <div class="hero-logo-card">
+          <div class="logo-aura"></div>
+          <div class="relative z-10 flex flex-col items-center justify-center text-center gap-8 py-6">
+            <img src="nava-logo-gold1.png" alt="NAVA Digital emblem" class="hero-logo-img">
+            <img src="nava-name-gold.png" alt="NAVA" class="hero-name-img object-contain">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="py-24 px-6 relative border-t border-slate-200/80 dark:border-slate-800/60">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="reveal max-w-2xl mb-16">
+        <span class="eyebrow eyebrow-pill mb-4">Core Capabilities</span>
+        <h2 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white mt-2">
+          Everything you need to launch, perform, and scale online.
+        </h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-400 text-base">
+          No fragmented agencies or miscommunication. We handle layout, code, hosting, and marketing under one roof with
+          extreme quality control.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+        <!-- Service Card 1 -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrapper">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="14" rx="2" />
+              <path d="M3 9h18" />
+              <circle cx="6" cy="6.5" r=".75" fill="currentColor" />
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mb-2">Web Engineering</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+            Bespoke corporate sites, SaaS landing pages, and interactive dashboards engineered for speed, clean SEO, and
+            instant conversion.
+          </p>
+          <ul
+            class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-2 border-t border-slate-200/80 dark:border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Sub-second
+              page load times</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Pixel-perfect
+              responsive design</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Built-in
+              analytics & SEO schema</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrapper">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="6" y="2" width="12" height="20" rx="3" />
+              <path d="M11 18h2" />
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mb-2">Mobile Applications</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+            Native iOS and Android mobile apps for bookings, delivery, customer loyalty, and internal staff workflow
+            automation.
+          </p>
+          <ul
+            class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-2 border-t border-slate-200/80 dark:border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>iOS & Android
+              cross-platform</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Push
+              notifications & offline mode</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>App Store &
+              Play Store deployment</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrapper">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="20" r="1" />
+              <circle cx="17" cy="20" r="1" />
+              <path d="M1 1h4l2.6 12.8a2 2 0 0 0 2 1.2h8.8a2 2 0 0 0 2-1.2L23 6H6" />
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mb-2">E-Commerce Stores</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+            High-performance online storefronts with instant product search, frictionless checkout flows, and automated
+            payment gateways.
+          </p>
+          <ul
+            class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-2 border-t border-slate-200/80 dark:border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Payment &
+              Click-to-WhatsApp checkout</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Inventory &
+              order management</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Mobile-optimized shopping cart
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrapper">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mb-2">Growth & Marketing</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+            Targeted local SEO, Google Ads setup, and Social Media conversion funnels to drive real customers straight
+            to your product.
+          </p>
+          <ul
+            class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-2 border-t border-slate-200/80 dark:border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Google Maps &
+              local search ranking</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>High-ROI ad
+              campaign setup</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Conversion
+              rate optimization</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrapper">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mb-2">Maintenance & Support</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+            Long-term security monitoring, weekly backups, content updates, and direct founder support whenever you need
+            a change.
+          </p>
+          <ul
+            class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-2 border-t border-slate-200/80 dark:border-slate-800/80 pt-4">
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>24/7 uptime
+              monitoring</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>Security
+              patches & speed audits</li>
+            <li class="flex items-center gap-2"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span>On-demand
+              feature additions</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 6 (Consultation Callout) -->
+        <div class="service-card reveal flex flex-col justify-between border-dashed border-amber-500/40 bg-amber-500/5">
+          <div>
+            <span class="eyebrow text-amber-600 dark:text-amber-300">Need Guidance?</span>
+            <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white mt-2 mb-3">Unsure what to build?
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              Tell us your business goal. We will candidly advise whether you need a quick landing page, a web app, or
+              an e-commerce store.
+            </p>
+          </div>
+          <a href="https://wa.me/919989061802?text=Hi%20NAVA%2C%20I%27d%20like%20free%20advice%20on%20my%20digital%20project."
+            target="_blank" rel="noopener"
+            class="btn-primary py-3 rounded-xl text-xs font-mono uppercase mt-6 text-center">
+            Ask For Free Advice
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SELECTED WORK SECTION WITH INTERACTIVE FILTERS -->
+  <section id="work"
+    class="py-24 px-6 bg-slate-100/60 dark:bg-slate-900/40 border-t border-slate-200/80 dark:border-slate-800/60">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="reveal flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="eyebrow eyebrow-pill mb-4">Case Studies</span>
+          <h2 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white mt-2">
+            Handcrafted digital work for real businesses.
+          </h2>
+        </div>
+
+        <!-- Interactive Work Filter Pills -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
+          <button type="button" class="filter-btn" data-filter="e-commerce">E-Commerce</button>
+          <button type="button" class="filter-btn" data-filter="webapp">Web Apps</button>
+          <button type="button" class="filter-btn" data-filter="mobile">Mobile</button>
+        </div>
+      </div>
+
+      <!-- Work Cards Container -->
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Case Study 1: E-Commerce Store -->
+        <a href="https://srisvrhomefoods.web.app/" target="_blank" rel="noopener"
+          class="work-card-link block group text-left">
+          <div class="work-card work-card-item reveal p-7 md:p-9 relative h-full flex flex-col justify-between"
+            data-category="e-commerce">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="text-xs font-mono text-amber-700 dark:text-amber-300 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">E-Commerce</span>
+                <span
+                  class="text-xs font-mono text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 font-medium"><span
+                    class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>Live Store
+                  Handoff</span>
+              </div>
+              <h3
+                class="font-display font-bold text-2xl sm:text-3xl text-slate-900 dark:text-white mb-3 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors flex items-center justify-between">
+                <span>Home-Made Artisanal Food Store</span>
+                <svg
+                  class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 text-amber-500"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                </svg>
+              </h3>
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                Transformed a local home-food kitchen from taking manual phone calls into a streamlined online
+                storefront
+                with instant WhatsApp order routing and lightweight cart.
+              </p>
+
+              <div class="project-preview-frame mb-6">
+                <div
+                  class="w-full rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-700/60 shadow-2xl bg-white relative group-hover:border-amber-500/50 transition-colors">
+                  <!-- Browser chrome bar -->
+                  <div
+                    class="flex items-center justify-between px-3 py-2 bg-slate-100 dark:bg-slate-800 border-b border-slate-200/80 dark:border-slate-700/60">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                      <span class="ml-2 text-[0.6rem] font-mono text-slate-400 truncate">srisvrhomefoods.web.app</span>
+                    </div>
+                    <span
+                      class="text-[0.65rem] font-mono text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1">
+                      Live Store ↗
+                    </span>
+                  </div>
+                  <!-- Real website screenshot -->
+                  <img src="svr-home-foods-preview.png"
+                    alt="SVR Home Foods- Live E-Commerce Website built by NAVA Digital"
+                    class="w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy">
+
+                  <!-- Hover Overlay -->
+                  <div
+                    class="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4">
+                    <div
+                      class="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-400 text-slate-950 font-mono text-xs font-bold shadow-2xl">
+                      <span>Tap to view the application</span>
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+              <span
+                class="px-3 py-1 rounded-full bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700">Product
+                Catalog</span>
+              <span
+                class="px-3 py-1 rounded-full bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700">WhatsApp
+                Checkout</span>
+              <span
+                class="px-3 py-1 rounded-full bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700">Mobile-First</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Case Study 2: GuessProof AI (Personal Web App) -->
+        <a href="https://guess-proof-ai.vercel.app/" target="_blank" rel="noopener"
+          class="work-card-link block group text-left">
+          <div class="work-card work-card-item reveal p-7 md:p-9 relative h-full flex flex-col justify-between"
+            data-category="webapp">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="text-xs font-mono text-amber-700 dark:text-amber-300 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">Personal
+                    Idea</span>
+                  <span
+                    class="text-xs font-mono text-sky-700 dark:text-sky-300 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30">Web
+                    App</span>
+                </div>
+                <span
+                  class="text-xs font-mono text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 font-medium">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>100% Local
+                  AI
+                </span>
+              </div>
+
+              <h3
+                class="font-display font-bold text-2xl sm:text-3xl text-slate-900 dark:text-white mb-3 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors flex items-center justify-between">
+                <span>GuessProof AI</span>
+                <svg
+                  class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 text-amber-500"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                </svg>
+              </h3>
+
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                Our personal idea turned into a live web application. Detects OSINT leaks, keyboard walk patterns,
+                breached credentials, and dictionary attacks 100% locally in your browser.
+              </p>
+
+              <div class="project-preview-frame mb-6">
+                <div
+                  class="w-full rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-700/60 shadow-2xl bg-white relative group-hover:border-amber-500/50 transition-colors">
+                  <!-- Browser chrome bar -->
+                  <div
+                    class="flex items-center justify-between px-3 py-2 bg-slate-100 dark:bg-slate-800 border-b border-slate-200/80 dark:border-slate-700/60">
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                      <span
+                        class="ml-2 text-[0.6rem] font-mono text-slate-400 truncate">guess-proof-ai.vercel.app</span>
+                    </div>
+                    <span
+                      class="text-[0.65rem] font-mono text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1">
+                      Live Web App ↗
+                    </span>
+                  </div>
+                  <!-- Real website screenshot -->
+                  <img src="guessproof-ai-preview.png" alt="GuessProof AI Web App built by NAVA Digital"
+                    class="w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy">
+
+                  <!-- Hover Overlay -->
+                  <div
+                    class="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4">
+                    <div
+                      class="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-400 text-slate-950 font-mono text-xs font-bold shadow-2xl">
+                      <span>Tap to view the application</span>
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+              <span
+                class="px-3 py-1 rounded-full bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700">OSINT
+                Leak Check</span>
+              <span
+                class="px-3 py-1 rounded-full bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700">100%
+                Local AI</span>
+              <span
+                class="px-3 py-1 rounded-full bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700">Zero
+                Server Transmission</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- INTERACTIVE TECH STACK & SPEED BENCHMARKS -->
+  <section id="stack" class="py-24 px-6 border-t border-slate-200/80 dark:border-slate-800/60">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="reveal max-w-2xl mb-12">
+        <span class="eyebrow eyebrow-pill mb-4">Engineering Standards</span>
+        <h2 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white mt-2">
+          Modern tech, zero unnecessary weight.
+        </h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-400 text-base">
+          We pick frameworks based on performance, accessibility, and maintenance ease so your site stays fast for years
+          without breaking.
+        </p>
+      </div>
+
+      <!-- Tech Stack Tabs -->
+      <div class="reveal flex items-center border-b border-slate-200 dark:border-slate-800 mb-8 overflow-x-auto">
+        <button type="button" class="tech-tab active" data-tech="frontend">Frontend & Performance</button>
+        <button type="button" class="tech-tab" data-tech="mobile">Mobile Stack</button>
+        <button type="button" class="tech-tab" data-tech="ecommerce">E-Commerce & Checkout</button>
+        <button type="button" class="tech-tab" data-tech="infrastructure">Hosting & Security</button>
+      </div>
+
+      <!-- Tech Content Panels -->
+      <div class="reveal glass-panel p-8">
+
+        <!-- Panel 1: Frontend -->
+        <div class="tech-panel grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-panel="frontend">
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">HTML5 &amp; Modern CSS
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Clean, semantic markup with lightweight CSS design
+              systems for instant
+              layout render.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Vanilla JS / React</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Zero bloat JavaScript engines for 60fps scrolling and
+              rapid
+              micro-interactions.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Tailwind CSS</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Utility-first architecture allowing consistent design
+              tokens and
+              responsive scaling.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">High Performance</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Optimized image delivery, sub-second LCP target, and
+              top accessibility
+              rankings.</p>
+          </div>
+        </div>
+
+        <!-- Panel 2: Mobile -->
+        <div class="tech-panel hidden grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-panel="mobile">
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">React Native / Flutter
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">High-performance cross-platform codebase compiling to
+              native iOS &amp;
+              Android binaries.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">PWA Capabilities</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Installable web apps with offline caching, push
+              messaging, and home screen
+              shortcuts.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Push Notifications</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">FCM / OneSignal integrations for real-time customer
+              re-engagement.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Biometric Auth</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Secure FaceID / TouchID device authentication flows.
+            </p>
+          </div>
+        </div>
+
+        <!-- Panel 3: E-Commerce -->
+        <div class="tech-panel hidden grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-panel="ecommerce">
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">WhatsApp Checkout</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Zero friction ordering that formats cart details
+              straight to your sales
+              agent's WhatsApp.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Stripe &amp; Local Gateways
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Secure international credit card processing and
+              regional payment
+              integrations.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Fast Product Search</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Instant client-side catalog filtering and category
+              indexing without server
+              delays.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Inventory Sync</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Automated stock counts and instant new order
+              notifications.</p>
+          </div>
+        </div>
+
+        <!-- Panel 4: Infrastructure -->
+        <div class="tech-panel hidden grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-panel="infrastructure">
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Vercel / Cloudflare CDN
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Global edge network caching ensuring lightning fast
+              response times
+              worldwide.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">SSL &amp; DDoS Shield</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Bank-grade TLS encryption and automated threat
+              mitigation enabled out of
+              the box.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Automated Backups</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Daily database snapshots and version-controlled
+              codebase deployment
+              rollbacks.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800">
+            <div class="text-amber-600 dark:text-amber-400 font-mono font-bold text-lg mb-1">Domain &amp; DNS Setup
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">Hassle-free custom domain configuration and DKIM/SPF
+              email deliverability
+              setup.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROCESS ROADMAP SECTION -->
+  <section id="process"
+    class="py-24 px-6 bg-slate-100/60 dark:bg-slate-900/40 border-t border-slate-200/80 dark:border-slate-800/60">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="reveal max-w-2xl mb-16">
+        <span class="eyebrow eyebrow-pill mb-4">Straightforward Process</span>
+        <h2 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white mt-2">
+          From idea to live product in 5 simple moves.
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+        <div
+          class="reveal p-6 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="process-step-num">01</div>
+          <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">Understand</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+            We discuss your target audience, core business problem, and timeline before suggesting a line of code.
+          </p>
+        </div>
+
+        <div
+          class="reveal p-6 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="process-step-num">02</div>
+          <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">Wireframe & Design</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+            You review and approve the exact layout and user flow before development begins.
+          </p>
+        </div>
+
+        <div
+          class="reveal p-6 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="process-step-num">03</div>
+          <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">Build & Test</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+            We write clean code and test across real mobile devices, browsers, and checkout interactions.
+          </p>
+        </div>
+
+        <div
+          class="reveal p-6 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm dark:shadow-none">
+          <div class="process-step-num">04</div>
+          <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">Deploy & Launch</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+            Domain, security SSL, and fast hosting configuration- your website goes live safely.
+          </p>
+        </div>
+
+        <div
+          class="reveal p-6 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-amber-500/40 dark:border-amber-500/30 bg-amber-500/5 shadow-sm dark:shadow-none">
+          <div class="process-step-num text-amber-600 dark:text-amber-400">05</div>
+          <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white mb-2">Ongoing Support</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+            We stay connected for updates, maintenance, and new features as your client base expands.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TESTIMONIALS & TRUST SECTION -->
+  <section class="py-24 px-6 border-t border-slate-200/80 dark:border-slate-800/60">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="reveal max-w-2xl mb-16">
+        <span class="eyebrow eyebrow-pill mb-4">Client Feedback</span>
+        <h2 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white mt-2">
+          What business owners say about working with NAVA.
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7">
+
+        <div class="testimonial-card reveal">
+          <div class="flex items-center gap-1 text-amber-500 dark:text-amber-400 mb-4">
+            ★★★★★
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 text-sm italic leading-relaxed mb-6">
+            "NAVA built our online food catalog in less than a week. Orders went from chaotic phone calls to clean
+            WhatsApp messages. Highly recommended!"
+          </p>
+          <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <div>
+              <div class="font-display font-bold text-sm text-slate-900 dark:text-white">Kiran D</div>
+              <div class="text-xs font-mono text-slate-500 dark:text-slate-400">Home-Food Founder</div>
+            </div>
+            <span
+              class="text-[0.65rem] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-300">Verified
+              Client</span>
+          </div>
+        </div>
+
+        <!-- <div class="testimonial-card reveal">
+          <div class="flex items-center gap-1 text-amber-500 dark:text-amber-400 mb-4">
+            ★★★★★
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 text-sm italic leading-relaxed mb-6">
+            "Working directly with the developer made all the difference. Zero technical confusion, fast response times,
+            and an incredible design."
+          </p>
+          <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <div>
+              <div class="font-display font-bold text-sm text-slate-900 dark:text-white">Sardor M.</div>
+              <div class="text-xs font-mono text-slate-500 dark:text-slate-400">Services Director</div>
+            </div>
+            <span
+              class="text-[0.65rem] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-300">Verified
+              Client</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="flex items-center gap-1 text-amber-500 dark:text-amber-400 mb-4">
+            ★★★★★
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 text-sm italic leading-relaxed mb-6">
+            "The speed of our new website blew us away. Pages load instantly on mobile, and our search ranking improved
+            within weeks."
+          </p>
+          <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <div>
+              <div class="font-display font-bold text-sm text-slate-900 dark:text-white">Davron T.</div>
+              <div class="text-xs font-mono text-slate-500 dark:text-slate-400">E-Commerce Manager</div>
+            </div>
+            <span
+              class="text-[0.65rem] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-300">Verified
+              Client</span>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ ACCORDION SECTION -->
+  <section id="faq"
+    class="py-24 px-6 bg-slate-100/60 dark:bg-slate-900/40 border-t border-slate-200/80 dark:border-slate-800/60">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="reveal text-center mb-16">
+        <span class="eyebrow eyebrow-pill mb-4">Common Questions</span>
+        <h2 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white mt-2">
+          Transparent answers before you start.
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal">
+
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <button type="button" class="faq-header" id="faq-header-1" aria-controls="faq-body-1" aria-expanded="false">
+            <span>How long does it take to build a website or store?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-body" id="faq-body-1" role="region" aria-labelledby="faq-header-1" aria-hidden="true">
+            Most business landing pages and standard websites take 7 to 10 business days. E-commerce stores and
+            custom
+            web apps take 12 to 18 days depending on product catalog size and features.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button type="button" class="faq-header" id="faq-header-2" aria-controls="faq-body-2" aria-expanded="false">
+            <span>Do I get full ownership of the website and code?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-body" id="faq-body-2" role="region" aria-labelledby="faq-header-2" aria-hidden="true">
+            Yes! You own 100% of your domain, codebase, images, and content. We hand over all admin credentials
+            and
+            deployment rights as soon as final payment is completed.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button type="button" class="faq-header" id="faq-header-3" aria-controls="faq-body-3" aria-expanded="false">
+            <span>Will my website work well on mobile phones?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-body" id="faq-body-3" role="region" aria-labelledby="faq-header-3" aria-hidden="true">
+            Absolutely. We adopt a mobile-first engineering approach. Over 75% of your clients browse on
+            smartphone
+            screens, so we test every button, form, and image for zero layout shifts and instant touch response.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button type="button" class="faq-header" id="faq-header-4" aria-controls="faq-body-4" aria-expanded="false">
+            <span>What happens after launch if I need changes?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-body" id="faq-body-4" role="region" aria-labelledby="faq-header-4" aria-hidden="true">
+            Our relationship doesn't end on launch day. We offer ongoing maintenance packages for routine backups,
+            security updates, content updates, and new feature additions whenever your business expands.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT & WHATSAPP FORM SECTION -->
+  <section id="contact" class="py-28 px-6 border-t border-slate-200/80 dark:border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+
+      <div class="lg:col-span-5 reveal">
+        <span class="eyebrow eyebrow-pill mb-4">Let's Connect</span>
+        <h2 class="font-display font-extrabold text-4xl sm:text-5xl text-slate-900 dark:text-white mt-2 mb-6">
+          Ready to build something great?
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+          Tell us about your business, what you sell, and what problem you want solved. We will respond with
+          honest
+          technical scope and a clear price estimate.
+        </p>
+
+        <div class="space-y-4 mb-8">
+          <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300 text-sm">
+            <div
+              class="w-7 h-7 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+              ✓</div>
+            <span>Direct developer communication- no account manager relays</span>
+          </div>
+          <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300 text-sm">
+            <div
+              class="w-7 h-7 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+              ✓</div>
+            <span>Fast WhatsApp handoff with pre-formatted project details</span>
+          </div>
+          <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300 text-sm">
+            <div
+              class="w-7 h-7 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold">
+              ✓</div>
+            <span>Fixed pricing & clear turnaround timelines</span>
+          </div>
+        </div>
+
+        <a href="https://wa.me/919989061802?text=Hi%20NAVA%2C%20I%27d%20like%20to%20discuss%20a%20new%20project."
+          target="_blank" rel="noopener" class="btn-whatsapp px-7 py-3.5 rounded-full text-sm inline-flex">
+          <span>Chat directly on WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-7 reveal">
+        <form id="contact-form" class="glass-panel p-8 sm:p-10 space-y-5" novalidate>
+          <!-- Anti-Spam Honeypot Field -->
+          <div style="position: absolute; left: -9999px;" aria-hidden="true">
+            <input type="text" name="website_hp" id="website_hp" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">Your Name
+                *</label>
+              <input id="name" type="text" required autocomplete="name" class="field-input" placeholder="Alex Morgan">
+              <p class="field-error hidden">Please enter your name.</p>
+            </div>
+            <div>
+              <label for="email" class="block font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">Email
+                Address
+                *</label>
+              <input id="email" type="email" required autocomplete="email" class="field-input"
+                placeholder="alex@business.com">
+              <p class="field-error hidden">Please enter a valid email.</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="need" class="block font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">What service
+              do
+              you need?</label>
+            <select id="need" class="field-input">
+              <option>Business Website</option>
+              <option>E-Commerce Store</option>
+              <option>Mobile Application</option>
+              <option>Digital Marketing &amp; Growth</option>
+              <option>Custom Web Application</option>
+              <option>Not Sure - Need Advice</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">Project
+              Brief
+              &amp; Goals *</label>
+            <textarea id="message" rows="4" required class="field-input"
+              placeholder="Describe your product, target audience, and key requirements..."></textarea>
+            <p class="field-error hidden">Please write a short description of your project.</p>
+          </div>
+
+          <button type="submit" id="submit-btn"
+            class="w-full btn-primary py-4 rounded-xl text-sm uppercase tracking-wider font-mono">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span id="submit-btn-text">Send Message</span>
+          </button>
+          <p id="form-note" class="text-xs font-mono text-center hidden"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- UPGRADED ULTRA-SLEEK CORPORATE FOOTER -->
+  <footer
+    class="border-t border-slate-200/80 dark:border-slate-800/80 bg-slate-100/90 dark:bg-slate-950 pt-16 pb-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-200/80 dark:border-slate-800/80">
+
+        <!-- Column 1: Brand & Founder Ownership -->
+        <div class="space-y-4">
+          <a href="#top" class="footer-brand-group flex items-center gap-0 group" aria-label="NAVA Home">
+            <img src="nava-logo-gold1.png" alt="NAVA emblem" class="footer-logo-img">
+            <img src="nava-name-gold.png" alt="NAVA" class="footer-name-img">
+          </a>
+
+          <div class="pt-1">
+            <div class="text-xs font-mono font-bold text-slate-950 dark:text-white uppercase tracking-wider">
+              ABHIRAM ALLADA
+            </div>
+            <div class="text-xs font-mono text-slate-700 dark:text-slate-300 font-semibold">
+              Founder &amp; Lead Architect, NAVA Digital
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+            Engineered for high performance &amp; human conversion. Building custom web applications, e-commerce
+            storefronts, and mobile platforms.
+          </p>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="space-y-3">
+          <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-950 dark:text-white">
+            Navigation
+          </h4>
+          <ul class="space-y-2 text-xs font-mono text-slate-700 dark:text-slate-300 font-medium">
+            <li><a href="#services" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Services
+                &amp; Capabilities</a></li>
+            <li><a href="#work" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Selected Case
+                Studies</a></li>
+            <li><a href="#stack" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Technology
+                Architecture</a></li>
+            <li><a href="#process" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">5-Step
+                Delivery Method</a></li>
+            <li><a href="#faq" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Frequently Asked
+                Questions</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Direct Handoff & Instagram -->
+        <div class="space-y-3">
+          <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-950 dark:text-white">
+            Direct Handoff &amp; Social
+          </h4>
+          <div class="space-y-2.5 text-xs font-mono text-slate-700 dark:text-slate-300 font-medium">
+            <div class="flex items-center gap-2">
+              <span class="text-slate-950 dark:text-slate-100 font-bold">Email:</span>
+              <a href="mailto:teamnavadigital@gmail.com"
+                class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">teamnavadigital@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-slate-950 dark:text-slate-100 font-bold">Phone / WA:</span>
+              <a href="https://wa.me/919989061802" target="_blank" rel="noopener"
+                class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">+91 99890 61802</a>
+            </div>
+            <div class="flex items-center gap-2 pt-1">
+              <span class="text-slate-950 dark:text-slate-100 font-bold">Instagram:</span>
+              <a href="https://www.instagram.com/navadigitalindia/" target="_blank" rel="noopener"
+                class="inline-flex items-center gap-1.5 text-pink-600 dark:text-pink-400 hover:underline font-bold">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+                <span>@navadigitalindia</span>
+              </a>
+            </div>
+            <div class="pt-2">
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-[0.7rem] font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Direct Founder Access • 24h Response
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 4: Privacy & Compliance -->
+        <div class="space-y-3">
+          <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-950 dark:text-white">
+            Privacy &amp; Ethics
+          </h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+            Enquiries submitted to NAVA Digital are strictly used for technical estimation and communication. Your
+            business data is never shared or monetized.
+          </p>
+          <div class="pt-2">
+            <a href="#contact" class="text-xs font-mono text-amber-700 dark:text-amber-300 hover:underline font-bold">
+              Request Scope &amp; Quote ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 text-center text-xs font-mono text-slate-600 dark:text-slate-400 font-medium">
+        <div class="pb-1">
+          <span class="font-bold text-slate-900 dark:text-white">ABHIRAM ALLADA</span>
+          Founder, NAVA Digital
+        </div>
+        <div>
+          © 2026 NAVA Digital. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top"
+    class="fixed bottom-7 right-7 w-11 h-11 rounded-full btn-primary hidden items-center justify-center z-40"
+    aria-label="Back to top">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- FLOATING WHATSAPP BUTTON (Bottom-Left) -->
+  <a href="https://wa.me/919989061802?text=Hi%20NAVA%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank"
+    rel="noopener" class="whatsapp-float" aria-label="Chat with NAVA on WhatsApp">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 32 32" aria-hidden="true">
+      <path
+        d="M16.03 4C9.42 4 4.05 9.32 4.05 15.88c0 2.11.56 4.17 1.62 5.98L4 28l6.31-1.63a12.1 12.1 0 0 0 5.72 1.44C22.64 27.81 28 22.48 28 15.92C28 9.36 22.64 4 16.03 4Zm0 21.78c-1.8 0-3.55-.48-5.09-1.39l-.36-.21l-3.74.97l1-3.63l-.24-.37a9.77 9.77 0 0 1-1.5-5.27c0-5.43 4.45-9.85 9.93-9.85c5.47 0 9.92 4.43 9.92 9.89c0 5.43-4.45 9.86-9.92 9.86Zm5.45-7.39c-.3-.15-1.76-.86-2.03-.96c-.27-.1-.47-.15-.67.15c-.2.29-.77.96-.95 1.16c-.17.2-.35.22-.65.07c-.3-.15-1.26-.46-2.4-1.47a8.99 8.99 0 0 1-1.66-2.05c-.17-.3-.02-.46.13-.61c.13-.13.3-.35.45-.52c.15-.17.2-.3.3-.5c.1-.2.05-.37-.02-.52c-.07-.15-.67-1.6-.92-2.19c-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37c-.27.3-1.04 1.01-1.04 2.46c0 1.45 1.06 2.86 1.21 3.06c.15.2 2.08 3.15 5.04 4.41c.7.3 1.25.48 1.68.61c.71.22 1.35.19 1.86.11c.57-.08 1.76-.71 2-1.4c.25-.69.25-1.28.17-1.4c-.07-.13-.27-.2-.57-.35Z" />
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

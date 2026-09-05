@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "site": "navadigitalindia",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      ".gitignore",
+      "logo.txt",
+      "**/.*"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
