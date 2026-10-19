@@ -13,6 +13,8 @@ const filesToCopy = [
   'thank-you.html',
   'style.css',
   'script.js',
+  'NAVA Digital India Gold Emblem Banner.png',
+  'NAVA Digital India Gold Emblem.png',
   'nava-logo-gold.png',
   'nava-logo-gold1.png',
   'nava-name-gold.png',

@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add JS enabled marker to html
   document.documentElement.classList.add('js-enabled');
 
+  // ---------- 0. Dynamic Copyright Year ----------
+  const currentYearEl = document.getElementById('current-year');
+  if (currentYearEl) {
+    currentYearEl.textContent = new Date().getFullYear();
+  }
+
   // ---------- 1. Theme Toggle (Light / Dark Mode) ----------
   const themeToggle = document.getElementById('theme-toggle');
   const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
@@ -109,44 +115,126 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ---------- 3. Selected Work Portfolio Category Filter (Race-Condition Free) ----------
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const workCards = document.querySelectorAll('.work-card-item');
+  // ---------- 3. Explore Service Buttons (Smooth Scroll & Auto-select) ----------
+  const exploreServiceBtns = document.querySelectorAll('.explore-service-btn');
+  const needSelect = document.getElementById('need');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-
-      workCards.forEach(card => {
-        const item = card.closest('.work-card-link') || card;
-
-        // Cancel any pending timer to avoid filter race conditions
-        if (item._filterTimeout) {
-          clearTimeout(item._filterTimeout);
-          item._filterTimeout = null;
+  exploreServiceBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const service = btn.getAttribute('data-service');
+      if (needSelect && service) {
+        // Match option text or value
+        let matched = false;
+        for (let i = 0; i < needSelect.options.length; i++) {
+          if (needSelect.options[i].value === service || needSelect.options[i].text.includes(service)) {
+            needSelect.selectedIndex = i;
+            matched = true;
+            break;
+          }
         }
-
-        if (filter === 'all' || card.dataset.category === filter) {
-          item.style.display = '';
-          item._filterTimeout = setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-          }, 20);
-        } else {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(15px)';
-          item._filterTimeout = setTimeout(() => {
-            item.style.display = 'none';
-          }, 200);
+        if (!matched) {
+          needSelect.value = service;
         }
-      });
+      }
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        e.preventDefault();
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          const messageInput = document.getElementById('message');
+          if (messageInput) messageInput.focus();
+        }, 500);
+      }
     });
   });
 
 
-  // ---------- 4. Interactive Tech Stack Switcher ----------
+  // ---------- 4. Project Details Modal Logic ----------
+  const projectModal = document.getElementById('project-modal');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+  const modalDismissBtn = document.getElementById('modal-dismiss-btn');
+  const modalCategory = document.getElementById('modal-project-category');
+  const modalTitle = document.getElementById('modal-project-title');
+  const modalPurpose = document.getElementById('modal-project-purpose');
+  const modalProblem = document.getElementById('modal-project-problem');
+  const modalTech = document.getElementById('modal-project-tech');
+  const modalLiveLink = document.getElementById('modal-live-link');
+
+  const projectDetailsMap = {
+    svr: {
+      category: 'E-Commerce Platform / Production',
+      title: 'SVR Home Foods',
+      purpose: 'Transformed an artisanal home food business into an online storefront with intuitive category navigation, responsive shopping cart, and automated WhatsApp order routing.',
+      problem: 'The business previously relied on manual phone calls and disorganized direct messages, leading to missed orders and payment confusion. The new system automates order compilation directly into formatted WhatsApp messages with clear item breakdown and order totals.',
+      tech: ['HTML5', 'CSS3', 'JavaScript', 'Firebase Hosting', 'WhatsApp Business API'],
+      liveUrl: 'https://srisvrhomefoods.web.app/'
+    },
+    guessproof: {
+      category: 'Web Application / SaaS Concept',
+      title: 'GuessProof AI Platform',
+      purpose: 'An interactive cybersecurity web application designed to evaluate password vulnerability, dictionary vectors, and pattern leaks with instantaneous client-side calculation.',
+      problem: 'Most users reuse weak or breached passwords without understanding threat vectors. GuessProof AI provides visual real-time feedback on password complexity, entropy, and crack time without sending sensitive data to external servers.',
+      tech: ['Modern JavaScript', 'Tailwind CSS', 'REST APIs', 'Client-Side Analytics', 'Vercel Deployment'],
+      liveUrl: 'https://guess-proof-ai.vercel.app/'
+    }
+  };
+
+  function openProjectModal(projectId) {
+    const data = projectDetailsMap[projectId];
+    if (!data || !projectModal) return;
+
+    if (modalCategory) modalCategory.textContent = data.category;
+    if (modalTitle) modalTitle.textContent = data.title;
+    if (modalPurpose) modalPurpose.textContent = data.purpose;
+    if (modalProblem) modalProblem.textContent = data.problem;
+
+    if (modalTech) {
+      modalTech.innerHTML = data.tech.map(t => `
+        <span class="px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700">${t}</span>
+      `).join('');
+    }
+
+    if (modalLiveLink) {
+      modalLiveLink.href = data.liveUrl;
+    }
+
+    projectModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProjectModal() {
+    if (!projectModal) return;
+    projectModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.project-details-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const projectId = btn.getAttribute('data-project');
+      openProjectModal(projectId);
+    });
+  });
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeProjectModal);
+  if (modalDismissBtn) modalDismissBtn.addEventListener('click', closeProjectModal);
+
+  if (projectModal) {
+    projectModal.addEventListener('click', (e) => {
+      if (e.target === projectModal) {
+        closeProjectModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModal && !projectModal.classList.contains('hidden')) {
+      closeProjectModal();
+    }
+  });
+
+
+  // ---------- 5. Interactive Tech Stack Switcher ----------
   const techTabs = document.querySelectorAll('.tech-tab');
   const techPanels = document.querySelectorAll('.tech-panel');
 
@@ -167,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ---------- 5. FAQ Accordion Logic with ARIA Accessibility ----------
+  // ---------- 6. FAQ Accordion Logic with ARIA Accessibility ----------
   const faqHeaders = document.querySelectorAll('.faq-header');
 
   faqHeaders.forEach(header => {
@@ -194,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ---------- 6. Intersection Observer with Graceful Fallback ----------
+  // ---------- 7. Intersection Observer with Graceful Fallback ----------
   const revealElements = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window) {
@@ -214,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ---------- 7. Active Navigation Link Highlighting ----------
+  // ---------- 8. Active Navigation Link Highlighting ----------
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('#primary-nav .nav-link');
 
@@ -234,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ---------- 8. Back-to-Top Button ----------
+  // ---------- 9. Back-to-Top Button ----------
   const backToTop = document.getElementById('back-to-top');
   let ticking = false;
 
@@ -261,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ---------- 9. Contact Form → Anti-Spam & EmailJS Submission ----------
+  // ---------- 10. Contact Form → Anti-Spam & EmailJS Submission ----------
   const form          = document.getElementById('contact-form');
   const note          = document.getElementById('form-note');
   const submitBtn     = document.getElementById('submit-btn');
@@ -310,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setBtnState(loading) {
       if (!submitBtn || !submitBtnText) return;
       submitBtn.disabled = loading;
-      submitBtnText.textContent = loading ? 'Sending…' : 'Send Message';
+      submitBtnText.textContent = loading ? 'Sending Enquiry…' : 'Send Project Enquiry';
       submitBtn.style.opacity  = loading ? '0.7' : '';
       submitBtn.style.cursor   = loading ? 'wait' : '';
     }
@@ -324,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Trapped bot: simulate silent success without calling EmailJS
         setBtnState(true);
         setTimeout(() => {
-          setNote('✓ Message received. Thank you!');
+          setNote('✓ Project enquiry received. Thank you!');
           setBtnState(false);
           form.reset();
         }, 800);
@@ -336,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const now = Date.now();
       if (lastSubmit && (now - parseInt(lastSubmit, 10)) < 60000) {
         const remainingSecs = Math.ceil((60000 - (now - parseInt(lastSubmit, 10))) / 1000);
-        setNote(`⚠ Please wait ${remainingSecs}s before submitting another message.`, true);
+        setNote(`⚠ Please wait ${remainingSecs}s before submitting another enquiry.`, true);
         return;
       }
 
@@ -355,12 +443,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Gather form inputs
       const nameVal    = document.getElementById('name').value.trim();
       const emailVal   = document.getElementById('email').value.trim();
-      const needVal    = document.getElementById('need')?.value ?? 'Digital Solution';
+      const needVal    = document.getElementById('need')?.value ?? 'Website Design & Development';
       const messageVal = document.getElementById('message').value.trim();
 
       // Submit via EmailJS
       setBtnState(true);
-      setNote('Sending message…');
+      setNote('Sending enquiry…');
 
       try {
         await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
@@ -375,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Store rate-limiting timestamp
         localStorage.setItem('nava_form_last_submit', Date.now().toString());
 
-        setNote('✓ Message sent! Redirecting to confirmation page…');
+        setNote('✓ Enquiry sent! Redirecting to confirmation page…');
         setTimeout(() => {
           window.location.href = 'thank-you.html';
         }, 1000);
