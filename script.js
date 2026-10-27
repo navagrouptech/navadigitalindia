@@ -357,36 +357,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // EmailJS credentials
   const EMAILJS_SERVICE_ID  = 'service_0xonud9';
-  const EMAILJS_TEMPLATE_ID = 'template_0cw2u8f';
+  const EMAILJS_TEMPLATE_ID = 'template_1y0z8s6';
+  const EMAILJS_PUBLIC_KEY  = 'onvovVwx2bhkeSuys';
 
   if (form) {
+    const nameInput    = document.getElementById('name');
+    const phoneInput   = document.getElementById('phone');
+    const emailInput   = document.getElementById('email');
+    const serviceInput = document.getElementById('service') || document.getElementById('need');
+    const subjectInput = document.getElementById('subject');
+    const messageInput = document.getElementById('message');
+    const consentInput = document.getElementById('consent');
+    const consentError = document.getElementById('consent-error');
+
     const fields = [
-      { input: document.getElementById('name'),    validate: v => v.trim().length >= 2 && v.trim().length <= 100 },
-      { input: document.getElementById('email'),   validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
-      { input: document.getElementById('message'), validate: v => v.trim().length >= 10 && v.trim().length <= 2000 }
+      { input: nameInput,    validate: v => v.trim().length >= 2 && v.trim().length <= 100 },
+      { input: emailInput,   validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+      { input: phoneInput,   validate: v => v.trim() === '' || /^[+0-9\s\-()]{7,20}$/.test(v.trim()), optional: true },
+      { input: messageInput, validate: v => v.trim().length >= 10 && v.trim().length <= 3000 }
     ];
 
     function showFieldError(input, isValid) {
       if (!input) return;
       input.classList.toggle('error', !isValid);
-      const errorEl = input.parentElement.querySelector('.field-error');
+      const errorEl = input.parentElement?.querySelector('.field-error');
       if (errorEl) errorEl.classList.toggle('hidden', isValid);
     }
 
     // Live validation
-    fields.forEach(({ input, validate }) => {
+    fields.forEach(({ input, validate, optional }) => {
       if (input) {
         input.addEventListener('input', () => {
           if (input.classList.contains('error')) {
-            showFieldError(input, validate(input.value));
+            const val = input.value;
+            const ok = optional && val.trim() === '' ? true : validate(val);
+            showFieldError(input, ok);
           }
         });
       }
     });
 
+    if (consentInput && consentError) {
+      consentInput.addEventListener('change', () => {
+        if (consentInput.checked) {
+          consentError.classList.add('hidden');
+        }
+      });
+    }
+
     function setNote(msg, isError = false) {
       if (!note) return;
       note.textContent = msg;
+      note.classList.remove('hidden');
       note.className = [
         'text-xs font-mono text-center mt-3 block',
         isError
@@ -398,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setBtnState(loading) {
       if (!submitBtn || !submitBtnText) return;
       submitBtn.disabled = loading;
-      submitBtnText.textContent = loading ? 'Sending Enquiry…' : 'Send Project Enquiry';
+      submitBtnText.textContent = loading ? 'Sending Message…' : 'Send Message';
       submitBtn.style.opacity  = loading ? '0.7' : '';
       submitBtn.style.cursor   = loading ? 'wait' : '';
     }
@@ -419,58 +441,91 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Anti-Spam Check 2: Rate limiting (60 seconds cooldown)
+      // Anti-Spam Check 2: Rate limiting (30 seconds cooldown)
       const lastSubmit = localStorage.getItem('nava_form_last_submit');
       const now = Date.now();
-      if (lastSubmit && (now - parseInt(lastSubmit, 10)) < 60000) {
-        const remainingSecs = Math.ceil((60000 - (now - parseInt(lastSubmit, 10))) / 1000);
+      if (lastSubmit && (now - parseInt(lastSubmit, 10)) < 30000) {
+        const remainingSecs = Math.ceil((30000 - (now - parseInt(lastSubmit, 10))) / 1000);
         setNote(`⚠ Please wait ${remainingSecs}s before submitting another enquiry.`, true);
         return;
       }
 
       // Validate input fields
       let allValid = true;
-      fields.forEach(({ input, validate }) => {
+      fields.forEach(({ input, validate, optional }) => {
         if (input) {
-          const ok = validate(input.value);
+          const val = input.value;
+          const ok = optional && val.trim() === '' ? true : validate(val);
           showFieldError(input, ok);
           if (!ok) allValid = false;
         }
       });
 
+      // Validate consent checkbox
+      if (consentInput) {
+        if (!consentInput.checked) {
+          allValid = false;
+          if (consentError) consentError.classList.remove('hidden');
+        } else if (consentError) {
+          consentError.classList.add('hidden');
+        }
+      }
+
       if (!allValid) return;
 
       // Gather form inputs
-      const nameVal    = document.getElementById('name').value.trim();
-      const emailVal   = document.getElementById('email').value.trim();
-      const needVal    = document.getElementById('need')?.value ?? 'Website Design & Development';
-      const messageVal = document.getElementById('message').value.trim();
+      const nameVal    = nameInput?.value.trim() || '';
+      const emailVal   = emailInput?.value.trim() || '';
+      const phoneVal   = phoneInput?.value.trim() || '';
+      const serviceVal = serviceInput?.value || 'General Inquiry / Information';
+      const subjectVal = subjectInput?.value.trim() || (serviceVal ? `Inquiry: ${serviceVal}` : 'NAVA Digital India Contact');
+      const messageVal = messageInput?.value.trim() || '';
 
       // Submit via EmailJS
       setBtnState(true);
-      setNote('Sending enquiry…');
+      setNote('Sending message…');
 
       try {
-        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        if (typeof emailjs === 'undefined') {
+          throw new Error('EmailJS SDK is not loaded. Please check your internet connection.');
+        }
+
+        const templateParams = {
+          name          : nameVal,
           from_name     : nameVal,
+          user_name     : nameVal,
+          email         : emailVal,
           from_email    : emailVal,
-          service_needed: needVal,
+          user_email    : emailVal,
+          reply_to      : emailVal,
+          phone         : phoneVal || 'Not provided',
+          phone_number  : phoneVal || 'Not provided',
+          user_phone    : phoneVal || 'Not provided',
+          service       : serviceVal,
+          service_needed: serviceVal,
+          topic         : serviceVal,
+          subject       : subjectVal,
           message       : messageVal,
-          to_email      : 'teamnavadigital@gmail.com',
-          reply_to      : emailVal
-        });
+          consent_given : 'Yes',
+          submitted_at  : new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          to_name       : 'NAVA Digital India',
+          to_email      : 'navagroup.official@gmail.com'
+        };
+
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
 
         // Store rate-limiting timestamp
         localStorage.setItem('nava_form_last_submit', Date.now().toString());
 
-        setNote('✓ Enquiry sent! Redirecting to confirmation page…');
+        setNote('✓ Message sent successfully! Redirecting…');
         setTimeout(() => {
           window.location.href = 'thank-you.html';
-        }, 1000);
+        }, 1200);
 
       } catch (err) {
         console.error('EmailJS Submission Error:', err);
-        setNote('✗ Could not send automatically. Please contact us directly via WhatsApp (+91 99890 61802) or email (teamnavadigital@gmail.com).', true);
+        const errMsg = err?.text || err?.message || 'Could not send message automatically.';
+        setNote(`✗ ${errMsg}. You can also reach us via WhatsApp (+91 99890 61802) or email (navagroup.official@gmail.com).`, true);
         setBtnState(false);
       }
     });

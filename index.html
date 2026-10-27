@@ -1424,31 +1424,43 @@
             <input type="text" name="website_hp" id="website_hp" tabindex="-1" autocomplete="off">
           </div>
 
+          <!-- Row 1: Full Name & Phone Number -->
           <div class="grid sm:grid-cols-2 gap-5">
             <div>
-              <label for="name" class="block font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">
-                Full Name *
+              <label for="name" class="form-label">
+                Full Name <span class="req">*</span>
               </label>
               <input id="name" name="user_name" type="text" required autocomplete="name" class="field-input"
-                placeholder="Your Full Name">
+                placeholder="Your Name">
               <p class="field-error hidden">Please enter your name.</p>
             </div>
             <div>
-              <label for="email" class="block font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">
-                Email Address *
+              <label for="phone" class="form-label">
+                Phone Number (Optional)
               </label>
-              <input id="email" name="user_email" type="email" required autocomplete="email" class="field-input"
-                placeholder="name@business.com">
-              <p class="field-error hidden">Please enter a valid email address.</p>
+              <input id="phone" name="user_phone" type="tel" autocomplete="tel" class="field-input"
+                placeholder="+91 XXXXX XXXXX">
+              <p class="field-error hidden">Please enter a valid phone number or leave blank.</p>
             </div>
           </div>
 
+          <!-- Row 2: Email Address -->
           <div>
-            <label for="need" class="block font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">
-              Service Required *
+            <label for="email" class="form-label">
+              Email Address <span class="req">*</span>
             </label>
-            <select id="need" name="service_needed" class="field-input" required>
-              <option value="">Select a Service</option>
+            <input id="email" name="user_email" type="email" required autocomplete="email" class="field-input"
+              placeholder="you@domain.com">
+            <p class="field-error hidden">Please enter a valid email address.</p>
+          </div>
+
+          <!-- Row 3: Service or Topic Required -->
+          <div>
+            <label for="service" class="form-label">
+              Service or Topic Required
+            </label>
+            <select id="service" name="service_needed" class="field-input">
+              <option value="General Inquiry / Information" selected>General Inquiry / Information</option>
               <option value="Website Design &amp; Development">Website Design &amp; Development</option>
               <option value="Web Application Development">Web Application Development</option>
               <option value="Mobile Application Development">Mobile Application Development</option>
@@ -1456,27 +1468,49 @@
               <option value="Website Maintenance &amp; Support">Website Maintenance &amp; Support</option>
               <option value="Website Testing &amp; Quality Assurance">Website Testing &amp; Quality Assurance</option>
               <option value="SEO Optimization">SEO Optimization</option>
-              <option value="Digital Marketing">Digital Marketing</option>
-              <option value="Other">Other</option>
+              <option value="Digital Marketing &amp; Strategy">Digital Marketing &amp; Strategy</option>
+              <option value="Other / Custom Consultation">Other / Custom Consultation</option>
             </select>
           </div>
 
+          <!-- Row 4: Subject -->
           <div>
-            <label for="message" class="block font-mono text-xs text-slate-500 dark:text-slate-400 mb-2">
-              Project Brief *
+            <label for="subject" class="form-label">
+              Subject
             </label>
-            <textarea id="message" name="message" rows="4" required class="field-input"
-              placeholder="Tell us what you're planning, what you want to achieve, and key project details..."></textarea>
-            <p class="field-error hidden">Please write a brief description of your project.</p>
+            <input id="subject" name="subject" type="text" class="field-input"
+              placeholder="Brief summary of your inquiry">
           </div>
 
+          <!-- Row 5: Message -->
+          <div>
+            <label for="message" class="form-label">
+              Message <span class="req">*</span>
+            </label>
+            <textarea id="message" name="message" rows="5" required class="field-input"
+              placeholder="Please describe your requirements, project scope, or questions..."></textarea>
+            <p class="field-error hidden">Please enter a message (at least 10 characters).</p>
+          </div>
+
+          <!-- Row 6: Consent Checkbox -->
+          <div>
+            <div class="flex items-start gap-3 pt-1">
+              <input id="consent" name="consent" type="checkbox" required class="field-checkbox">
+              <label for="consent" class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed cursor-pointer select-none">
+                I agree to have NAVA Digital India process my submitted details for the purpose of answering this inquiry. <span class="req text-red-500">*</span>
+              </label>
+            </div>
+            <p id="consent-error" class="field-error hidden">Please agree to have your details processed before submitting.</p>
+          </div>
+
+          <!-- Submit Button -->
           <button type="submit" id="submit-btn"
-            class="w-full btn-primary py-4 rounded-xl text-sm uppercase tracking-wider font-mono">
+            class="w-full btn-primary py-4 rounded-xl text-sm uppercase tracking-wider font-mono flex items-center justify-center gap-2">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path
                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            <span id="submit-btn-text">Send Project Enquiry</span>
+            <span id="submit-btn-text">Send Message</span>
           </button>
           <p id="form-note" class="text-xs font-mono text-center hidden"></p>
         </form>
