@@ -350,20 +350,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ---------- 10. Contact Form → Anti-Spam & EmailJS Submission ----------
-  const form          = document.getElementById('contact-form');
-  const note          = document.getElementById('form-note');
-  const submitBtn     = document.getElementById('submit-btn');
+  const form = document.getElementById('contact-form');
+  const note = document.getElementById('form-note');
+  const submitBtn = document.getElementById('submit-btn');
   const submitBtnText = document.getElementById('submit-btn-text');
 
   // EmailJS credentials
-  const EMAILJS_SERVICE_ID  = 'service_0xonud9';
+  const EMAILJS_SERVICE_ID = 'service_g98hrf7';
   const EMAILJS_TEMPLATE_ID = 'template_1y0z8s6';
-  const EMAILJS_PUBLIC_KEY  = 'onvovVwx2bhkeSuys';
+  const EMAILJS_PUBLIC_KEY = 'onvovVwx2bhkeSuys';
 
   if (form) {
-    const nameInput    = document.getElementById('name');
-    const phoneInput   = document.getElementById('phone');
-    const emailInput   = document.getElementById('email');
+    const nameInput = document.getElementById('name');
+    const phoneInput = document.getElementById('phone');
+    const emailInput = document.getElementById('email');
     const serviceInput = document.getElementById('service') || document.getElementById('need');
     const subjectInput = document.getElementById('subject');
     const messageInput = document.getElementById('message');
@@ -371,9 +371,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const consentError = document.getElementById('consent-error');
 
     const fields = [
-      { input: nameInput,    validate: v => v.trim().length >= 2 && v.trim().length <= 100 },
-      { input: emailInput,   validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
-      { input: phoneInput,   validate: v => v.trim() === '' || /^[+0-9\s\-()]{7,20}$/.test(v.trim()), optional: true },
+      { input: nameInput, validate: v => v.trim().length >= 2 && v.trim().length <= 100 },
+      { input: emailInput, validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+      { input: phoneInput, validate: v => v.trim() === '' || /^[+0-9\s\-()]{7,20}$/.test(v.trim()), optional: true },
       { input: messageInput, validate: v => v.trim().length >= 10 && v.trim().length <= 3000 }
     ];
 
@@ -421,8 +421,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!submitBtn || !submitBtnText) return;
       submitBtn.disabled = loading;
       submitBtnText.textContent = loading ? 'Sending Message…' : 'Send Message';
-      submitBtn.style.opacity  = loading ? '0.7' : '';
-      submitBtn.style.cursor   = loading ? 'wait' : '';
+      submitBtn.style.opacity = loading ? '0.7' : '';
+      submitBtn.style.cursor = loading ? 'wait' : '';
     }
 
     form.addEventListener('submit', async (e) => {
@@ -474,9 +474,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!allValid) return;
 
       // Gather form inputs
-      const nameVal    = nameInput?.value.trim() || '';
-      const emailVal   = emailInput?.value.trim() || '';
-      const phoneVal   = phoneInput?.value.trim() || '';
+      const nameVal = nameInput?.value.trim() || '';
+      const emailVal = emailInput?.value.trim() || '';
+      const phoneVal = phoneInput?.value.trim() || '';
       const serviceVal = serviceInput?.value || 'General Inquiry / Information';
       const subjectVal = subjectInput?.value.trim() || (serviceVal ? `Inquiry: ${serviceVal}` : 'NAVA Digital India Contact');
       const messageVal = messageInput?.value.trim() || '';
@@ -491,25 +491,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const templateParams = {
-          name          : nameVal,
-          from_name     : nameVal,
-          user_name     : nameVal,
-          email         : emailVal,
-          from_email    : emailVal,
-          user_email    : emailVal,
-          reply_to      : emailVal,
-          phone         : phoneVal || 'Not provided',
-          phone_number  : phoneVal || 'Not provided',
-          user_phone    : phoneVal || 'Not provided',
-          service       : serviceVal,
+          name: nameVal,
+          from_name: nameVal,
+          user_name: nameVal,
+          email: emailVal,
+          from_email: emailVal,
+          user_email: emailVal,
+          reply_to: emailVal,
+          phone: phoneVal || 'Not provided',
+          phone_number: phoneVal || 'Not provided',
+          user_phone: phoneVal || 'Not provided',
+          service: serviceVal,
           service_needed: serviceVal,
-          topic         : serviceVal,
-          subject       : subjectVal,
-          message       : messageVal,
-          consent_given : 'Yes',
-          submitted_at  : new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
-          to_name       : 'NAVA Digital India',
-          to_email      : 'navagroup.official@gmail.com'
+          topic: serviceVal,
+          subject: subjectVal,
+          message: messageVal,
+          consent_given: 'Yes',
+          submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          to_name: 'NAVA Digital India',
+          to_email: 'navagroup.official@gmail.com'
         };
 
         await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
